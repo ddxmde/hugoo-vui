@@ -39,17 +39,21 @@ npm run build
 
 主题主要涉及 配色、边框、阴影等。
 
-- 颜色：
+- 主题名-颜色：
 
   内置7类颜色:
 
-  - dark 深色 \#303133
-  - primary 主要 \#2f4858
-  - success 成功 \#0881a3
-  - warning 警告 \#ffb400
-  - danger 危险 \#ea5455
-  - info 信息 \#DCDFE6
-  - basic 基础 #FFFFFF
+  - **dark** 深色 \#303133
+  - **primary** 主要 \#2f4858
+  - **success** 成功 \#0881a3
+  - **warning** 警告 \#ffb400
+  - **danger** 危险 \#ea5455
+  - **info** 信息 \#DCDFE6
+  - **basic** 基础 #FFFFFF
+
+  效果：
+
+  ![](./assets/6.png)
 
   颜色加深 - 使用less语法 #color-darken[主题颜色名]  加深度为12%
 
