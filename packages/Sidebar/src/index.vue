@@ -15,7 +15,7 @@ Description
 
 <script>
   export default {
-      name:'f-menu',
+      name:'f-sidebar',
       props:{
           position:{
               type:String,

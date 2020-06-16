@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-   <f-triple-header style-mode="primary" class="box-shadow-3 border-3"
+   <f-triple-header type="primary" class="box-shadow-3 border-3"
                   title-text="FloatUI" 
                   left-text="主页" left-icon="icon-home"
                   right-icon="icon-info"
@@ -13,18 +13,18 @@
       
     </router-view>
 
-    <f-menu className="fmenu" type="primary"  :show="fmenuShow1">
+    <f-sidebar className="fmenu" type="primary"  :show="fmenuShow1">
       <div class="openBtn">
         <f-button type="info" style="bottom:20px;" v-on:btnclick="open2()"
         text="右侧menu样式"></f-button>
       </div>
-    </f-menu>
-    <f-menu className="fmenu" type="info"  position="right" :show="fmenuShow2">
+    </f-sidebar>
+    <f-sidebar className="fmenu" type="info"  position="right" :show="fmenuShow2">
       <div class="openBtn">
         <f-button type="info" style="bottom:20px;" v-on:btnclick="open1()"
         text="左侧menu样式"></f-button>
       </div>
-    </f-menu>
+    </f-sidebar>
   </div>
 </template>
 

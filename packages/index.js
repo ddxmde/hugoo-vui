@@ -5,13 +5,13 @@ import FToast from './Toast';
 import FCol from './Col';
 import FRow from './Row';
 import FConfirm from './Confirm';
-import FMenu from './Menu';
+import FSidebar from './Sidebar';
 
 
 import './assets/global.less';
 //import Vue from 'vue';
 const components = [
-    FButton, FHeader, FTripleHeader, FToast, FCol, FRow, FConfirm, FMenu
+    FButton, FHeader, FTripleHeader, FToast, FCol, FRow, FConfirm, FSidebar
 ]
 
 const install = function (Vue) {
@@ -33,5 +33,5 @@ export  {
     FButton,
     FHeader,
     FTripleHeader,
-    FToast, FCol, FRow, FConfirm, FMenu
+    FToast, FCol, FRow, FConfirm, FSidebar
 }

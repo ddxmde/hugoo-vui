@@ -5,7 +5,7 @@ Description
 @version 1.0.0
 -->
 <template>
-  <div :class="[styleMode===''?'f-header-default':'content-color-'+styleMode,'f-header']" 
+  <div :class="[type===''?'f-header-default':'content-color-'+type,'f-header']" 
         :style="{height:height}">
     <div class="f-header-left">
       <slot name="left"></slot>
@@ -24,9 +24,9 @@ Description
   export default {
       name:'f-header',
       props:{
-        styleMode:{
+        type:{
           type:String,
-          default:'light'
+          default:''
           },
         title:{
           type:String,
@@ -43,7 +43,7 @@ Description
 <style lang="less" scoped>
 
 .f-header{
-  width:calc(~"100vw - 2px");
+  width:100vw;
   display: flex;
   flex-direction: row;
   

@@ -5,7 +5,7 @@ Description
 @version 1.0.0
 -->
 <template>
-    <f-header :style-mode="styleMode" height="60px" >
+    <f-header :type="type" height="60px" >
       <div  slot="title" class="title-col" v-if="titleIcon.value!==''">
         <span v-if="titleIcon.type==='icon'"
         :class="['iconfont title-icon', titleIcon.value]"  v-on:click="$emit('clicktitle')"></span>
@@ -39,7 +39,7 @@ import FHeader from '../../Header';
             }
         },
       props:{
-          styleMode:{
+          type:{
               type:String,
               default:""
           },

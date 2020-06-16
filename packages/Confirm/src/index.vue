@@ -20,13 +20,16 @@ Description
     <div v-else class="f-confirm-content">
         <slot name="content"></slot>
     </div>
-    <div v-if="cancelText!==''||confirmText!=''" class="f-confirm-btns">
+    <div v-if="cancelText!==''||confirmText!==''" class="f-confirm-btns">
         <p>
             <f-button :text="cancelText" :type="cancelType" size="normal"
                 v-on:btnclick="$emit('cancle')"></f-button>
             <f-button :text="confirmText" :type="confirmType" size="normal"
                 v-on:btnclick="$emit('confirm')"></f-button>
         </p>
+    </div>
+    <div v-else class="f-confirm-btns">
+        <slot name="btns"></slot>
     </div>
   </div>
   </transition>
