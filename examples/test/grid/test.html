@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div class="row" id="row">
+        <div class="col-item" style="flex:2">
+            <div style="flex:1"></div>
+            <div class="col-content" style="flex:1"></div>
+        </div>
+        <div class="col-item" style="flex:2">
+            <div class="col-content" style="flex:1"></div>
+        </div>
+        <div class="col-item" style="flex:2">
+            <div class="col-content" style="flex:1"></div>
+        </div>
+    </div> 
+    <div style="position:fixed;bottom:0px;right:10px;">
+        <div style="width:100px;padding:10px;background:#ccc;text-align:center">
+            <p style="width:40px;height:30px;background:#000;margin:auto"></p>
+        </div>
+    </div>
+</body>
+<style>
+    .row{
+        width:600px;
+        display: flex;
+        display:-webkit-flex;
+        flex-direction:row;
+        justify-content:space-between;
+        background: #e5e9f2;
+        
+    }
+    .col-item{
+        height:50px;
+        display:flex;
+        
+    }
+    .col-content{
+            background: #99a9bf;
+            
+        animation: bounce-in 3s  infinite;
+        }
+    @keyframes bounce-in {
+        0% {
+            transform: scale(0,1);
+            transform-origin:left center;
+        }
+        50% {
+            transform: scale(0.5,1);
+            transform-origin:left center;
+        }
+        100% {
+            transform: scale(1,1);
+            transform-origin:left center;
+        }
+    }
+</style>
+<script>
+var children = document.getElementById('row').children
+Array.prototype.slice.call(children,1);
+
+var childArr = Array.prototype.slice.call(children,1);
+console.log(childArr)
+        childArr.map(node=>{
+            console.log(node)
+          node.style.marginLeft = 20+'px';
+        })
+
+
+</script>
+</html>

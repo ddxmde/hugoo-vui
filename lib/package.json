@@ -1,0 +1,15 @@
+{
+  "name": "hugoo-vui",
+  "version": "0.0.4",
+  "description": "",
+  "main": "hugoo-vui.common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "hugoo",
+  "license": "ISC"
+}

@@ -1,0 +1,288 @@
+
+/**色系*/
+    /*基础色*/
+
+    @dark: #303133;
+    @primary: #2f4858;
+    @success: #0881a3;
+    @warning: #ffb400;
+    @danger: #ea5455;
+    @info:#DCDFE6;
+    @basic:#FFFFFF;
+#color-darken(){
+    default: darken(@basic, 12%);
+    dark: darken(@dark, 12%);
+    primary: darken(@primary, 12%);
+    success: darken(@success, 12%);
+    warning: darken(@warning, 12%);
+    danger: darken(@danger, 12%);
+    info: darken(@info, 12%);
+    basic: darken(@basic, 12%);
+}
+#border-darken() {
+    default:darken(@basic, 5%);
+    dark: darken(@dark, 5%);
+    primary: darken(@primary, 5%);
+    success: darken(@success, 5%);
+    warning: darken(@warning, 5%);
+    danger: darken(@danger, 5%);
+    info: darken(@info, 5%);
+    basic: darken(@basic, 5%);
+}
+
+
+    /*黑色*/
+
+#color-black(){
+    1:#000000;
+    2:#3D3D3D;
+    3: #5C5C5C;
+    4: #8F8F8F;
+}
+    /*中性色*/
+
+#color-middle(){
+    1:#DCDFE6;
+    2:#E4E7ED;
+    3:#EBEEF5;
+    4:#F2F6FC;
+}
+
+/**文字截断**/
+.text-cut {
+    white-space: nowrap;
+    /*保证文本内容不会自动换行，如果多余的内容会在水平方向撑破单元格*/
+    overflow: hidden;
+    /*隐藏超出单元格的部分*/
+    text-overflow: ellipsis;
+    /*将被隐藏的那部分用省略号代替*/
+}
+
+body {
+    background: #ffffff;
+    padding:0;margin:0;
+}
+
+
+/**文字和背景容器*/
+.content-color-default {
+    background: @basic;
+    color: @dark;
+}
+.content-color-dark{
+    background:@dark;
+    color:@basic;
+}
+.content-color-primary {
+     background:@primary;
+     color:@basic;
+}
+.content-color-success {
+     background:@success;
+     color:@basic;
+}
+.content-color-warning {
+     background:@warning;
+     color:@basic;
+}
+
+.content-color-danger {
+     background:@danger;
+     color:@basic;
+}
+
+.content-color-info {
+     background:@info;
+     color:@dark;
+}
+
+/*圆角、边框和投影*/
+.radis-large{
+    border-radius:10px;
+}
+.radis-normal {
+    border-radius: 8px;
+}
+.radis-small {
+    border-radius: 6px;
+}
+
+.box-shadow-default {
+    border: 1px solid #border-darken[default];
+    box-shadow: 0px 0px 5px #color-darken[default];
+}
+.box-shadow-primary{
+    border:1px solid #border-darken[primary];
+    box-shadow: 0px 0px 5px #color-darken[primary];
+}
+.box-shadow-dark {
+    border:1px solid #border-darken[dark];
+    box-shadow: 0px 0px 5px #color-darken[dark];
+}
+.box-shadow-success {
+    border:1px solid #border-darken[success];
+    box-shadow: 0px 0px 5px #color-darken[success];
+}
+.box-shadow-warning {
+    border:1px solid #border-darken[warning];
+    box-shadow: 0px 0px 5px #color-darken[warning];
+}
+.box-shadow-danger {
+    border: 1px solid #border-darken[danger];
+    box-shadow: 0px 0px 5px #color-darken[danger];
+}
+.box-shadow-info {
+    border:1px solid #border-darken[info];
+    box-shadow: 0px 0px 5px #color-darken[info];
+}
+
+.box-shadow-max-default {
+    border: 1px solid #border-darken[default];
+    box-shadow: 0px 0px 30px #color-darken[default];
+}
+
+.box-shadow-max-primary {
+    border: 1px solid #border-darken[primary];
+    box-shadow: 0px 0px 30px #color-darken[primary];
+}
+
+.box-shadow-max-dark {
+    border: 1px solid #border-darken[dark];
+    box-shadow: 0px 0px 30px #color-darken[dark];
+}
+
+.box-shadow-max-success {
+    border: 1px solid #border-darken[success];
+    box-shadow: 0px 0px 30px #color-darken[success];
+}
+
+.box-shadow-max-warning {
+    border: 1px solid #border-darken[warning];
+    box-shadow: 0px 0px 30px #color-darken[warning];
+}
+
+.box-shadow-max-danger {
+    border: 1px solid #border-darken[danger];
+    box-shadow: 0px 0px 30px #color-darken[danger];
+}
+
+.box-shadow-max-info {
+    border: 1px solid #border-darken[info];
+    box-shadow: 0px 0px 30px #color-darken[info];
+}
+
+/**header*/
+.f-header-default {
+    .content-color-success();
+}
+
+/**button*/
+ .btn-size-large{
+     width:calc(~"96% - 2px");
+     margin-left:2%;
+     height:40px;
+     font-size:18px;
+     line-height: 40px;
+     white-space: nowrap;
+     overflow: hidden;
+     /*隐藏超出单元格的部分*/
+     text-overflow: ellipsis;
+     .radis-large;
+     img {
+         height: 30px;
+         margin-right: 3px;
+         vertical-align: middle;
+     }
+ }
+
+ .btn-size-normal {
+     width:140px;
+     display: inline-block;
+     margin-left:10px;
+     height: 40px;
+     .radis-normal;
+     font-size: 16px;
+     line-height: 40px;
+     padding:0 0px;
+    white-space: nowrap;
+    overflow: hidden;
+      /*隐藏超出单元格的部分*/
+    text-overflow: ellipsis;
+    img {
+        height: 30px;
+        vertical-align: middle;
+    }
+
+    span:not(:first-child) {
+        padding: 0 3px;
+    }
+ }
+ .btn-size-small {
+     clear:both;
+     width:80px;
+     display: inline-block;
+     margin-left: 10px;
+     height: 30px;
+     .radis-small;
+     font-size: 12px;
+     line-height: 30px;
+     white-space: nowrap;
+     overflow: hidden;
+     /*隐藏超出单元格的部分*/
+     text-overflow: ellipsis;
+     img {
+         height: 20px;
+         vertical-align: middle;
+     }
+     span:not(:first-child){
+        padding:0 5px;
+     }
+ }
+
+ /**confirm*/
+@confirm: .f-confirm;
+ @{confirm} {
+     width:calc(~"100vw - 20px");
+     position: fixed;
+     left:10px;
+     overflow:hidden;
+     
+ }
+ @{confirm}-top {
+     top: 0px;
+     border-radius:0px 0px 10px 10px;
+ }
+ @{confirm}-middle {
+     border-radius: 10px;
+ }
+
+ @{confirm}-bottom {
+     bottom: 0px;
+     border-radius: 10px 10px 0px 0px;
+ }
+ @{confirm}-title {
+    width:calc(~"100vw - 40px");
+    padding:10px 10px 10px 10px;
+    text-align: center;
+    font-size:18px;
+    font-weight:bold;
+    border-bottom:1px solid #color-darken[default];
+ }
+ @{confirm}-content {
+    padding:10px 20px;
+    font-size:14px;
+    line-height: 20px;
+    text-align:center;
+    p {
+        margin: auto;
+    }
+ }
+ @{confirm}-btns {
+     width:100%;
+     height:50px;
+     padding:10px 0;
+     text-align:center;
+     p{
+        margin:auto;
+     }
+ }
