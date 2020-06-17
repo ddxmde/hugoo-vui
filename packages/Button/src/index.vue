@@ -9,7 +9,7 @@ Description
     :class="['content-color-'+type,'box-shadow-'+type,{'x-button-disable':disable},
     'x-button','btn-size-'+size]"
     
-    v-on:click="$emit('btnclick')">
+    v-on:click="$emit('btnclick')" @touchstart="$emit('btnclick')">
 
     
 

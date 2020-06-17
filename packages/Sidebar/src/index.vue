@@ -6,8 +6,8 @@ Description
 -->
 <template>
     <transition :name="'menu-trans-'+position">
-        <div v-if="show" :class="['f-menu-wrapper','content-color-'+type,'f-menu-wrapper-'+position,'content-color-'+type,'box-shadow-max-'+type,className]"
-                >
+        <div v-show="show" :class="['f-menu-wrapper','content-color-'+type,'f-menu-wrapper-'+position,'content-color-'+type,'box-shadow-max-'+type,className]"
+                @touchmove="handleTouch" @touchstart="touchStart">
             <slot></slot>
         </div>
     </transition>
@@ -16,6 +16,12 @@ Description
 <script>
   export default {
       name:'f-sidebar',
+      data:function(){
+          return {
+              touch_start_x:0,
+              touch_start_y:0
+          }
+      },
       props:{
           position:{
               type:String,
@@ -32,6 +38,29 @@ Description
           show:{
               type:Boolean,
               default:false
+          }
+      },
+      methods:{
+          touchStart:function(event){
+            event.preventDefault()
+            this.startX = event.changedTouches[0].pageX
+            this.startY = event.changedTouches[0].pageY
+          },
+          handleTouch:function(event){
+                var _that = this;
+                //console.log("进入点击事件")
+                //event.preventDefault()
+                var moveEndX = event.changedTouches[0].pageX
+                var moveEndY = event.changedTouches[0].pageY
+                var move_x = Math.abs(moveEndX - _that.startX)
+                var move_y = Math.abs(moveEndY - _that.startY)
+                var this_width = this.$el.offsetWidth
+                //console.log(move_x+":"+move_y)
+                if(move_x>(this_width/2)&&move_y<30){
+                    //console.log("赋值canshow")
+                    _that.$emit('selfclose')
+                    //console.log(this.canshow)
+                }
           }
       }
   }

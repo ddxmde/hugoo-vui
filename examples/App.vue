@@ -13,15 +13,15 @@
       
     </router-view>
 
-    <f-sidebar className="fmenu" type="dark"  :show="fmenuShow1">
+    <f-sidebar className="fmenu" :show="fmenuShow1" @selfclose="fmenuShow1=false">
       <div class="openBtn">
         <f-button type="info" style="bottom:20px;" v-on:btnclick="open2()"
         text="右侧menu样式"></f-button>
       </div>
     </f-sidebar>
-    <f-sidebar className="fmenu" type="info"  position="right" :show="fmenuShow2">
+    <f-sidebar className="fmenu" type="info"  position="right" :show="fmenuShow2"  @selfclose="fmenuShow2=false" >
       <div class="openBtn">
-        <f-button type="info" style="bottom:20px;" v-on:btnclick="open1()"
+        <f-button type="info" style="bottom:20px;" v-on:btnclick="close2()"
         text="左侧menu样式"></f-button>
       </div>
     </f-sidebar>
@@ -44,8 +44,6 @@ export default {
   },
   methods:{
     goto:function(tar){
-      this.$refs[tar.text][0].loading=true
-      console.log(this.$refs[tar.text][0].loading)
       //tar.loading =true;
       this.$router.push(tar.text)
     },
@@ -61,9 +59,16 @@ export default {
       this.fmenuShow2 = false;
       this.fmenuShow1 = true;
     },
+    close1:function(){
+      this.fmenuShow2 = false;
+    },
     open2:function(){
       this.fmenuShow1 = false;
       this.fmenuShow2 = true;
+    },
+    close2:function(){
+      this.fmenuShow1 = false;
+      this.fmenuShow2 = false;
     }
   },
   mounted:function(){

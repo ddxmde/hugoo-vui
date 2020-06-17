@@ -189,7 +189,7 @@ body {
      overflow: hidden;
      /*隐藏超出单元格的部分*/
      text-overflow: ellipsis;
-     .radis-large;
+     
      img {
          height: 30px;
          margin-right: 3px;
@@ -202,7 +202,6 @@ body {
      display: inline-block;
      margin-left:10px;
      height: 40px;
-     .radis-normal;
      font-size: 16px;
      line-height: 40px;
      padding:0 0px;
@@ -225,7 +224,6 @@ body {
      display: inline-block;
      margin-left: 10px;
      height: 30px;
-     .radis-small;
      font-size: 12px;
      line-height: 30px;
      white-space: nowrap;
@@ -253,26 +251,18 @@ body {
  }
  @{confirm}-top {
      top: 0px;
+     border-radius: 0px 0px 10px 10px;
  }
  @{confirm}-middle {
-     
+    border-radius: 10px;
  }
 
  @{confirm}-bottom {
      bottom: 0px;
+     border-radius: 10px 10px 0px 0px;
  }
 
-@{confirm}-in-top {
-    border-radius: 0px 0px 10px 10px;
-}
 
-@{confirm}-in-middle {
-    border-radius: 10px;
-}
-
-@{confirm}-in-bottom {
-    border-radius: 10px 10px 0px 0px;
-}
 
  @{confirm}-title {
     width:calc(~"100vw - 40px");

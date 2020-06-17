@@ -120,6 +120,8 @@ npm run build
 
    监听click事件：btnclick
 
+   【更新】：去除了按钮圆角。使用者可以在组件调用时，加上全局预设的radius圆角样式className或者自定义。
+
    
 
 3. **header顶栏**
@@ -201,7 +203,17 @@ npm run build
 
    自定义类名如果有的效果不起作用，可以加! `important`
 
-   ****
+   **滑动手势：**
+
+   滑动水平距离超过组件宽度的一半，垂直距离不超过30px，可以关闭该组件。需要监听selfclose事件去设置show的值为false。不监听则默认关闭滑动手势。
+
+   ```php+HTML
+   <f-sidebar :show="visiable" @selfclose="visiable=false">
+   ```
+
+    **注意：如果这个组件包含子组件，子组件中如果不监听 @touchstart @touchmove ，父组件就会接管。也就是说，你自定义一个按钮，只监听了click事件，并且放到sidebar组件内部，那click事件就会监听不到。解决办法：给子组件监听@touchstart.**
+
+   
 
 6. **confirm确认框**
 

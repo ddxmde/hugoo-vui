@@ -21,8 +21,6 @@ export default {
   },
   methods:{
     goto:function(tar){
-      this.$refs[tar.text][0].loading=true
-      console.log(this.$refs[tar.text][0].loading)
       //tar.loading =true;
       this.$router.push(tar.text)
     }
