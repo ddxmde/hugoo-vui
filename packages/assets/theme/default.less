@@ -248,20 +248,32 @@ body {
      position: fixed;
      left:10px;
      overflow:hidden;
+     padding-bottom:3px;
      
  }
  @{confirm}-top {
      top: 0px;
-     border-radius:0px 0px 10px 10px;
  }
  @{confirm}-middle {
-     border-radius: 10px;
+     
  }
 
  @{confirm}-bottom {
      bottom: 0px;
-     border-radius: 10px 10px 0px 0px;
  }
+
+@{confirm}-in-top {
+    border-radius: 0px 0px 10px 10px;
+}
+
+@{confirm}-in-middle {
+    border-radius: 10px;
+}
+
+@{confirm}-in-bottom {
+    border-radius: 10px 10px 0px 0px;
+}
+
  @{confirm}-title {
     width:calc(~"100vw - 40px");
     padding:10px 10px 10px 10px;

@@ -7,32 +7,33 @@ Description
 <template>
         
   <transition :name="'confirm-trans-'+position">
-  <div v-if="show" :class="['f-confirm','f-confirm-'+position,'content-color-'+type,'box-shadow-max-info']">
-    <div v-if="title!==''" class="f-confirm-title">
-        {{title}}
-    </div>
-    <div v-else>
-        <slot name="title"></slot>
-    </div>
-    <div v-if="content!==''" class="f-confirm-content">
-        <p>{{content}}</p>
-    </div>
-    <div v-else class="f-confirm-content">
-        <slot name="content"></slot>
-    </div>
-    <div v-if="cancelText!==''||confirmText!==''" class="f-confirm-btns">
-        <p>
-            <f-button :text="cancelText" :type="cancelType" size="normal"
-                v-on:btnclick="$emit('cancle')"></f-button>
-            <f-button :text="confirmText" :type="confirmType" size="normal"
-                v-on:btnclick="$emit('confirm')"></f-button>
-        </p>
-    </div>
-    <div v-else class="f-confirm-btns">
-        <slot name="btns"></slot>
-    </div>
-  </div>
+  <div  v-show="show" :class="['f-confirm','f-confirm-'+position,'content-color-'+type,'box-shadow-max-info']">
+        <div v-if="title!==''" class="f-confirm-title">
+            {{title}}
+        </div>
+        <div v-else>
+            <slot name="title"></slot>
+        </div>
+        <div v-if="content!==''" class="f-confirm-content">
+            <p>{{content}}</p>
+        </div>
+        <div v-else class="f-confirm-content">
+            <slot name="content"></slot>
+        </div>
+        <div v-if="cancelText!==''||confirmText!==''" class="f-confirm-btns">
+            <p>
+                <f-button :text="cancelText" :type="cancelType" size="normal"
+                    v-on:btnclick="$emit('cancle')"></f-button>
+                <f-button :text="confirmText" :type="confirmType" size="normal"
+                    v-on:btnclick="$emit('confirm')"></f-button>
+            </p>
+        </div>
+        <div v-else class="f-confirm-btns">
+            <slot name="btns"></slot>
+        </div>
+  </div>      
   </transition>
+  
 </template>
 
 <script>
@@ -84,6 +85,7 @@ Description
           
       },
       mounted:function(){
+          console.log(this.$root.$el.style.offsetHeight)
           if(this.showTime!==0){
               this.show = false;
           }
@@ -97,12 +99,12 @@ Description
                     const bodyheight = window.screen.availHeight||document.documentElement.clientHeight||document.body.clientHeight ;
                     //console.log(bodyheight)
                     const domheight = this.$el.offsetHeight;
-                    console.log(bodyheight)
-                    console.log(domheight)
+                    //console.log(bodyheight)
+                    console.log(this.$el)
                     if(this.position=='middle'){
                             const top = (bodyheight-domheight)/2;
-                            this.$el.style.top = top;
-                            console.log(top)
+                            this.$el.style.top = top+'px';
+                            console.log(bodyheight+"-"+domheight+"-"+top)
                     }
                 })
               }else{

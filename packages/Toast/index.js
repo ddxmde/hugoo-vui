@@ -66,6 +66,6 @@ const FToast = (options={})=>{
 
 FToast.install=function(Vue){
     Vue.component('FToast',FToast)
-    Vue.$toast = Vue.prototype.$toast = FToast;
+    Vue.$ftoast = Vue.prototype.$ftoast = FToast;
 }
 export default FToast;

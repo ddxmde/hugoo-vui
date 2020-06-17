@@ -1,7 +1,7 @@
 <template>
   <div id="app">
    <f-triple-header type="primary" class="box-shadow-3 border-3"
-                  title-text="FloatUI" 
+                  title-text="FloatUI"
                   left-text="主页" left-icon="icon-home"
                   right-icon="icon-info"
                   v-on:clickleft="handleClickLeft"
@@ -13,7 +13,7 @@
       
     </router-view>
 
-    <f-sidebar className="fmenu" type="primary"  :show="fmenuShow1">
+    <f-sidebar className="fmenu" type="dark"  :show="fmenuShow1">
       <div class="openBtn">
         <f-button type="info" style="bottom:20px;" v-on:btnclick="open2()"
         text="右侧menu样式"></f-button>

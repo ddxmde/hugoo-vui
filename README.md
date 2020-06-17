@@ -124,9 +124,27 @@ npm run build
 
 3. **header顶栏**
 
-   使用率不高，主要是提供一个规范，比如高度。
+   三分栏布局。只提供三个props 和 三个具名插槽。中间title占50%，两侧比例为1:1. flex布局。子元素height均为100%。
 
-4. **TripleHeader 三分布局的顶栏**
+   ![](./assets/7.png)
+
+   **props:**
+
+   | props  | tips      | type   | default |
+   | ------ | --------- | ------ | ------- |
+   | type   | 主题样式  | String | default |
+   | title  | title文字 | String |         |
+   | height | 高度      | String | 50px    |
+
+   **slot**
+
+   - title  
+   - left
+   - right
+
+   
+
+4. **TripleHeader  header封装组件 **
 
    效果：
 
@@ -236,3 +254,30 @@ npm run build
 ### 插件
 
 **1. Toast  提示**
+
+效果：
+
+![](./assets/8.png)
+
+提供两种调用方式
+
+- 组件方式
+
+  组件方式需要在父组件内部手动引入组件。调用 **FToast(options)**.
+
+- 全局方法方式
+
+  不需要重新引入样式，只要全局vue已经Vue.use(FToast)或者已经引入整体组件库，就可以直接调用**Vue.$ftoast(options)**方法。这是在单页面中。如果是多页面，一定要在每一个Vue实例入口引用或者在组件内部引用。
+
+**options**对象 ：
+
+| arg       | tips                            | type   | default |
+| --------- | ------------------------------- | ------ | ------- |
+| duration  | 显示时长（单位毫秒）            | Number | 1000    |
+| message   | 消息内容                        | String |         |
+| position  | 显示位置 top,middle,bottom 可选 | String | middle  |
+| className | 自定义类名                      | String |         |
+| iconClass | 图标类名                        | String |         |
+
+
+

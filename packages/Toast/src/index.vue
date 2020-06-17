@@ -74,12 +74,25 @@ toast.vue
           iconClass:{
               type:String,
               default:''
+          },
+          open:{
+              type:Boolean,
+              default:false
           }
       },
       data(){
           return{
               visible:false
           };
+      },
+      watch:{
+        //   visible:function(val){
+        //       if(!val){
+        //           this.close();
+        //       }else{
+        //           this.closed = false;
+        //       }
+        //   }
       }
   }
 </script>

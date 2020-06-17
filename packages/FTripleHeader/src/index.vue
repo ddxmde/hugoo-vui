@@ -6,26 +6,35 @@ Description
 -->
 <template>
     <f-header :type="type" height="60px" >
-      <div  slot="title" class="title-col" v-if="titleIcon.value!==''">
-        <span v-if="titleIcon.type==='icon'"
-        :class="['iconfont title-icon', titleIcon.value]"  v-on:click="$emit('clicktitle')"></span>
-        <img v-else :src="titleIcon.value" class="title-img"/>
-        <span class="text-cut" style="font-size:12px;margin-top:-3px;" v-on:click="$emit('clicktitle')">{{titleText}}</span>
-      </div>
-      <div  slot="title" class="title-inline" v-else >
-        <span class="text-cut" style="font-size:18px" v-on:click="$emit('clicktitle')">{{titleText}}</span>
-      </div>
-      <div slot="left" class="left" v-if="leftIcon!==''">
-        <span :class="['iconfont left-icon', leftIcon]" 
-             v-on:click="$emit('clickleft')"></span>
-        <span v-if="leftText!==''" :class="[leftIcon===''?'':'left-text']" v-on:click="$emit('clickleft')">{{leftText}}</span>
-      </div>
-      <div slot="left" class="left-one" v-else>
-        <span :class="[leftIcon===''?'':'left-text']" v-on:click="$emit('clickleft')">{{leftText}}</span>
-      </div>
-      <div slot="right" class="right">
-        <span :class="['iconfont right-icon', rightIcon]"  v-on:click="$emit('clickright')"></span>
-      </div>
+        <template  v-slot:title>
+            <div  class="title-col" v-if="titleIcon.value!==''">
+                <span v-if="titleIcon.type==='icon'"
+                :class="['iconfont title-icon', titleIcon.value]"  v-on:click="$emit('clicktitle')"></span>
+                <img v-else :src="titleIcon.value" class="title-img"/>
+                <span class="text-cut" style="font-size:12px;margin-top:-3px;" v-on:click="$emit('clicktitle')">{{titleText}}</span>
+            </div>
+            <div class="title-inline" v-else >
+                <span class="text-cut" style="font-size:18px" v-on:click="$emit('clicktitle')">{{titleText}}</span>
+            </div>
+        </template>
+
+        <template v-slot:left>
+            <div class="left" v-if="leftIcon!==''">
+                <span :class="['iconfont left-icon', leftIcon]" 
+                    v-on:click="$emit('clickleft')"></span>
+                <span v-if="leftText!==''" :class="[leftIcon===''?'':'left-text']" v-on:click="$emit('clickleft')">{{leftText}}</span>
+            </div>
+            <div slot="left" class="left-one" v-else>
+                <span :class="[leftIcon===''?'':'left-text']" v-on:click="$emit('clickleft')">{{leftText}}</span>
+            </div>
+        </template>
+      
+        <template v-slot:right>
+            <div slot="right" class="right">
+                <span :class="['iconfont right-icon', rightIcon]"  v-on:click="$emit('clickright')"></span>
+            </div>
+        </template>
+      
     </f-header>
 </template>
 

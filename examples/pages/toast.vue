@@ -21,7 +21,8 @@ export default {
       headerImg5:{
         type:'icon',
         value:'icon-newfill'
-      }
+      },
+      toastOpen:true
     }
   },
   methods:{
@@ -29,17 +30,19 @@ export default {
       window.history.back(-1);
     },
     handlbtn2:function(){
-      this.$tips("fangfadiaoyong")
-        this.$toast('默认Toast');
+       this.$ftoast({
+          message:"带图标Toast",
+          iconClass:'iconfont icon-roundcheckfill'
+        });
     },
     handlbtn3:function(){
-        this.$toast({
+        this.$ftoast({
           message:"带图标Toast",
           iconClass:'iconfont icon-roundcheckfill'
         });
     },
     handlbtn4:function(){
-         this.$toast({
+         this.$ftoast({
           duration:5000,
           position:'bottom',
           message:"bottom-Toast",
@@ -47,7 +50,7 @@ export default {
         });
     },
     handlbtn5:function(){
-        this.$toast({
+        this.$ftoast({
           position:'top',
           message:"Top-Toast",
           iconClass:'iconfont icon-roundcheckfill'

@@ -36,7 +36,7 @@
     </f-confirm>
     <f-confirm :show="confirmShow4" type="danger"  position="middle" title="风险提示" content="根据用户使用协议，您的操作目前存在较高风险，请确认您的操作实属本人，且本平台不承担任何法律奉献。接受请按确认，否则点击取消。"
         cancelText="取消" cancelType="info"   confirmText="确认" confirmType="dark"
-        v-on:cancle="confirmShow4=false" v-on:confirm="confirmShow4=false"
+        v-on:cancle="confirmShow4=false" v-on:confirm="confirmShow4=false" 
     ></f-confirm>
     <f-confirm :show="confirmShow5" position="middle" title="风险提示" content="根据用户使用协议，您的操作目前存在较高风险，请确认您的操作实属本人，且本平台不承担任何法律奉献。接受请按确认，否则点击取消。"
         cancelText="取消" cancelType="dark"   confirmText="确认" confirmType="danger"

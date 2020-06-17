@@ -11,8 +11,9 @@ Description
       <slot name="left"></slot>
     </div>
     <div class="f-header-title">
-      <p v-if="title" style="line-height:100%;">{{title}}</p>
-    <slot v-else name="title"></slot>
+      <slot name="title">
+        <p v-if="title" style="line-height:100%;">{{title}}</p>
+      </slot>
     </div>
     <div class="f-header-right" >
       <slot name="right"></slot>
